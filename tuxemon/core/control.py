@@ -378,7 +378,7 @@ class Control(StateManager):
                         self.keyboard_events["KEYDOWN"]["escape"])
                 self.overlay_pressed["b"] = True
 
-        if (event.type == pg.MOUSEBUTTONUP) and (event.button == 1):
+        if event.type == pg.MOUSEBUTTONUP and event.button == 1:
             if self.overlay_pressed["up"]:
                 events.append(self.keyboard_events["KEYUP"]["up"])
                 self.overlay_pressed["up"] = False
@@ -425,8 +425,9 @@ class Control(StateManager):
             # X = 2                 D-Left = 11
             # Y = 3                 D-Right = 12
             #
+
             if event.type == pg.JOYBUTTONDOWN:
-                if event.button == 0:
+                if event.button == 2:
                     append(kbd_event["KEYDOWN"]["enter"])
                 if event.button == 1 or event.button == 7 or event.button == 6:
                     append(kbd_event["KEYDOWN"]["escape"])
@@ -458,7 +459,7 @@ class Control(StateManager):
             # Handle left joystick movement as well.
             # Axis 1 - up = negative, down = positive
             # Axis 0 - left = negative, right = positive
-            if event.type == pg.JOYAXISMOTION and False:  # Disabled until input manager is implemented
+            if event.type == pg.JOYAXISMOTION:  # Disabled until input manager is implemented
 
                 # Handle the left/right axis
                 if event.axis == 0:

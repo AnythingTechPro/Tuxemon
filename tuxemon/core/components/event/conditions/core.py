@@ -85,7 +85,7 @@ class Core(object):
         # Loop through each event
         for event in events:
             # NOTE: getattr on pygame is a little dangerous. We should sanitize input.
-            if event.type == pygame.KEYDOWN and event.key == getattr(pygame, button):
+            if event.type == pygame.KEYDOWN or event.type == pygame.JOYBUTTONDOWN and event.key == getattr(pygame, button):
                 return True
 
         return False

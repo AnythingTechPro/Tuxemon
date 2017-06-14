@@ -29,7 +29,6 @@
 #
 from collections import namedtuple
 from functools import partial
-
 from . import prepare
 
 
@@ -40,7 +39,6 @@ def adapter(name, *args):
         return nt(args)
 
     return func
-
 
 def main():
     """Add all available states to our scene manager (tools.Control)
