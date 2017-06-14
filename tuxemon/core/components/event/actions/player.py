@@ -109,7 +109,7 @@ class Player(object):
                 world.npcs = []
 
                 # Scale the loaded tiles if enabled
-                if world.scale > 1:
+                if world.tile_size > 1:
                     x_pos = 0        # Here we need to keep track of the x index of the list
                     # Loop through each row in the map. Each row is a list of
                     # Tile objects in that row.
